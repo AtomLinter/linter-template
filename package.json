@@ -1,6 +1,5 @@
 {
   "name": "linter-dummy",
-  "linter-package": true,
   "main": "./lib/init",
   "version": "0.1.0",
   "private": true,
