@@ -1,7 +1,7 @@
 linter-template
 =========================
 
-This linter template is a [Linter](https://github.com/AtomLinter/Linter) plugin boilerplate you can use to start the development of your own, it provides an interface to `dummy` external tool and it will be used with files that have the “Dummy” syntax.
+This linter template is a [Linter](https://github.com/AtomLinter/Linter) plugin boilerplate you can use to start the development of your own, it provides an interface to `dummy` external tool and it will be used with files that have the `dummy` syntax.
 
 ## Installation
 Clone the repo, now you can start the development of your new linter plugin.
