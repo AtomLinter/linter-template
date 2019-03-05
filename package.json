@@ -33,6 +33,9 @@
       "description": "Extra options for `dummy` command"
     }
   },
+  "activationHooks": [
+    "source.dummy:root-scope-used"
+  ],
   "scripts": {
     "lint": "eslint .",
     "test": "atom --test spec"

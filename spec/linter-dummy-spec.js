@@ -14,7 +14,22 @@ const goodFile = path.join(__dirname, 'fixtures', 'good.dummy');
 describe('The dummy provider for Linter', () => {
   beforeEach(async () => {
     atom.workspace.destroyActivePaneItem();
-    await atom.packages.activatePackage('linter-dummy');
+
+    const activationPromise = atom.packages.activatePackage('linter-dummy');
+
+    await atom.packages.activatePackage('language-dummy');
+    await atom.workspace.open(goodFile);
+
+    atom.packages.triggerDeferredActivationHooks();
+    await activationPromise;
+  });
+
+  it('should be in the packages list', () => {
+    expect(atom.packages.isPackageLoaded('linter-dummy')).toBe(true);
+  });
+
+  it('should be an active package', () => {
+    expect(atom.packages.isPackageActive('linter-dummy')).toBe(true);
   });
 
   it('checks a file with syntax error and reports the correct message', async () => {
